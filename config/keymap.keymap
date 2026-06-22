@@ -1,7 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
 / {
@@ -21,13 +20,14 @@
         // ============================================================
         // Layer 0: Base (Remap Layer 0)
         // ============================================================
+
         layer_0 {
             bindings = <
-&trans  &trans            &trans    &trans       &trans              &trans                                          &trans       &trans  &trans     &trans     &trans        &trans
-&trans  &kp TAB           &kp W     &kp E        &kp R               &kp T                                           &kp Y        &kp U   &kp I      &kp O      &kp ESC       &trans
-&trans  &kp A             &kp S     &kp D        &kp F               &kp G        &trans            &trans           &kp H        &kp J   &kp K      &kp MINUS  &kp P         &trans
-&trans  &mt LEFT_SHIFT Z  &mkp MB2  &mkp MB3     &mkp MB1            &kp B        &msc MOVE_Y(10)   &mkp MB2         &kp N        &kp M   &kp COMMA  &kp DOT    &kp L         &trans
-&trans  &kp LCTRL         &kp LALT  &mt LGUI DEL &lt 4 LANGUAGE_1    &lt 2 SPACE  &lt 3 LANGUAGE_1  &lt 5 BACKSPACE  &lt 1 ENTER  &none   &none      &none      &lt 3 RGUI    &trans
+&trans  &trans            &trans    &trans        &trans            &trans                                          &trans       &trans  &trans     &trans     &trans      &trans
+&trans  &kp TAB           &kp W     &kp E         &kp R             &kp T                                           &kp Y        &kp U   &kp I      &kp O      &kp ESC     &trans
+&trans  &kp A             &kp S     &kp D         &kp F             &kp G        &trans            &trans           &kp H        &kp J   &kp K      &kp MINUS  &kp P       &trans
+&trans  &mt LEFT_SHIFT Z  &mkp MB2  &mkp MB3      &mkp MB1          &kp B        &msc MOVE_Y(10)   &mkp MB2         &kp N        &kp M   &kp COMMA  &kp DOT    &kp L       &trans
+&trans  &kp LCTRL         &kp LALT  &mt LGUI DEL  &lt 4 LANGUAGE_1  &lt 2 SPACE  &lt 3 LANGUAGE_1  &lt 5 BACKSPACE  &lt 1 ENTER  &none   &none      &none      &lt 3 RGUI  &trans
             >;
         };
 
@@ -36,13 +36,14 @@
         //   Left:  ~¥  F7-F10 / |¥  F4-F6 F11 / *Shift F1-F3 F12
         //   Right: JIS symbols (Shift+Number) / ;  @  :  RShift
         // ============================================================
+
         layer_1 {
             bindings = <
-&trans  &trans       &trans  &trans  &trans  &trans                  &trans           &trans      &trans      &trans      &trans      &trans
-&trans  &kp GRAVE    &kp F7  &kp F8  &kp F9  &kp F10                 &kp LS(INT_YEN)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp SEMI    &trans
-&trans  &kp INT_YEN  &kp F4  &kp F5  &kp F6  &kp F11  &trans &trans  &kp LS(EQUAL)    &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp LBKT    &trans
-&trans  &kp LSHIFT   &kp F1  &kp F2  &kp F3  &kp F12  &trans &trans  &kp LS(SLASH)    &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp SQT     &trans
-&trans  &trans       &trans  &trans  &trans  &trans   &trans &trans  &trans           &trans      &trans      &trans      &kp RSHIFT  &trans
+&trans  &trans       &trans  &trans  &trans  &trans                   &trans           &trans      &trans      &trans      &trans      &trans
+&trans  &kp GRAVE    &kp F7  &kp F8  &kp F9  &kp F10                  &kp LS(INT_YEN)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp SEMI    &trans
+&trans  &kp INT_YEN  &kp F4  &kp F5  &kp F6  &kp F11  &trans  &trans  &kp LS(EQUAL)    &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp LBKT    &trans
+&trans  &kp LSHIFT   &kp F1  &kp F2  &kp F3  &kp F12  &trans  &trans  &kp LS(SLASH)    &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp SQT     &trans
+&trans  &trans       &trans  &trans  &trans  &trans   &trans  &trans  &trans           &trans      &trans      &trans      &kp RSHIFT  &trans
             >;
         };
 
@@ -52,13 +53,14 @@
         //   Right: PgUp ↑ PgDn / Home ← ↓ → End / F2 ( " ) / Enter(*Shift)
         //   Note: Macro 0 excluded → &trans
         // ============================================================
+
         layer_2 {
             bindings = <
-&trans  &trans            &trans  &trans  &trans    &trans                          &trans            &trans      &trans      &trans      &trans     &trans
-&trans  &kp SLASH         &kp N7  &kp N8  &kp N9    &kp MINUS                       &trans            &kp PG_UP   &kp UP      &kp PG_DN   &kp LBKT   &trans
-&trans  &kp LS(SQT)       &kp N4  &kp N5  &kp N6    &kp LS(SEMI)  &trans    &trans  &kp HOME          &kp LEFT    &kp DOWN    &kp RIGHT   &kp END    &trans
-&trans  &mt LSHIFT EQUAL  &kp N1  &kp N2  &kp N3    &kp LS(MINUS) &trans    &trans  &kp F2            &kp LS(N8)  &kp LS(N2)  &kp LS(N9)  &kp RGUI   &trans
-&trans  &kp LSHIFT        &kp N0  &kp DOT &kp LGUI  &kp LALT      &trans    &trans  &mt RSHIFT ENTER  &trans      &trans      &trans      &kp EQUAL  &trans
+&trans  &trans            &trans  &trans   &trans    &trans                         &trans            &trans      &trans      &trans      &trans     &trans
+&trans  &kp SLASH         &kp N7  &kp N8   &kp N9    &kp MINUS                      &trans            &kp PG_UP   &kp UP      &kp PG_DN   &kp LBKT   &trans
+&trans  &kp LS(SQT)       &kp N4  &kp N5   &kp N6    &kp LS(SEMI)   &trans  &trans  &kp HOME          &kp LEFT    &kp DOWN    &kp RIGHT   &kp END    &trans
+&trans  &mt LSHIFT EQUAL  &kp N1  &kp N2   &kp N3    &kp LS(MINUS)  &trans  &trans  &kp F2            &kp LS(N8)  &kp LS(N2)  &kp LS(N9)  &kp RGUI   &trans
+&trans  &kp LSHIFT        &kp N0  &kp DOT  &kp LGUI  &kp LALT       &trans  &trans  &mt RSHIFT ENTER  &trans      &trans      &trans      &kp EQUAL  &trans
             >;
         };
 
@@ -68,13 +70,14 @@
         //   Right: Ctrl+Y/H/P/L, Tab, Ctrl+Alt+Del
         //   Note: Macro/Kb keys excluded → &trans
         // ============================================================
+
         layer_3 {
             bindings = <
-&trans  &trans          &trans         &trans         &trans     &trans                          &trans           &trans  &trans  &trans          &trans     &trans
-&trans  &kp LS(LG(S))  &kp LC(LA(W))  &kp LC(LA(R))  &kp LG(R)  &kp LS(LG(T))                   &kp LC(Y)        &trans  &trans  &kp LC(LA(Z))   &kp LC(P)  &trans
-&trans  &kp LC(A)      &kp LC(S)      &kp LG(D)      &kp LC(F)  &kp LC(G)      &trans    &trans  &kp LC(H)        &trans  &trans  &trans          &kp LC(P)  &trans
-&trans  &kp LC(Z)      &kp LC(X)      &kp LC(C)      &kp LC(V)  &kp LG(V)      &trans    &trans  &trans           &trans  &trans  &trans          &kp LC(P)  &trans
-&trans  &trans         &mkp MB4       &mkp MB5       &trans     &trans         &trans    &kp TAB &kp LC(LA(DEL))  &trans  &trans  &trans          &kp LC(L)  &trans
+&trans  &trans         &trans         &trans         &trans     &trans                          &trans           &trans     &trans     &trans         &trans     &trans
+&trans  &kp LS(LG(S))  &kp LC(LA(W))  &kp LC(LA(R))  &kp LG(R)  &kp LS(LG(T))                   &kp LC(Y)        &kp LC(U)  &kp LC(I)  &kp LC(LA(Z))  &kp LC(P)  &trans
+&trans  &kp LC(A)      &kp LC(S)      &kp LG(D)      &kp LC(F)  &kp LC(G)      &trans  &trans   &kp LC(H)        &kp LC(J)  &kp LC(K)  &trans         &kp LC(P)  &trans
+&trans  &kp LC(Z)      &kp LC(X)      &kp LC(C)      &kp LC(V)  &kp LG(V)      &trans  &trans   &kp LC(N)        &kp LC(M)  &trans     &trans         &kp LC(P)  &trans
+&trans  &trans         &mkp MB4       &mkp MB5       &trans     &trans         &trans  &kp TAB  &kp LC(LA(DEL))  &trans     &trans     &trans         &kp LC(L)  &trans
             >;
         };
 
@@ -85,6 +88,7 @@
         //   Right: Y U I O ;(+) / H J K =(-) P / N M , . L(*Shift)
         //          Enter(*Shift)
         // ============================================================
+
         layer_4 {
             bindings = <
 &trans  &trans          &trans    &trans       &trans  &trans                  &trans            &trans  &trans     &trans     &trans        &trans
@@ -101,13 +105,14 @@
         //   Right: Win+↑ Win+↓ ↑ Alt+F4 / Home ← ↓ → End / Ctrl+Win+← Ctrl+Win+→
         //   Note: Macro 5, User 3, User 4 excluded → &trans
         // ============================================================
+
         layer_5 {
             bindings = <
-&trans  &trans              &trans       &trans     &trans          &trans                               &trans        &trans            &trans    &trans             &trans     &trans
-&trans  &kp KP_DIVIDE      &kp RBKT     &kp BSLH   &kp SLASH       &kp LC(LG(LBKT))                     &kp LG(UP)    &kp LG(DOWN)      &kp UP    &kp LA(F4)         &kp LC(P)  &trans
-&trans  &kp KP_MULTIPLY    &kp INT_YEN  &kp MINUS  &kp EQUAL       &trans             &trans    &trans  &kp HOME      &kp LEFT          &kp DOWN  &kp RIGHT          &kp END    &trans
-&trans  &kp MINUS          &trans       &trans     &kp LC(LS(V))   &kp LS(LG(V))      &trans    &trans  &trans        &kp LC(LG(LEFT))  &trans    &kp LC(LG(RIGHT))  &kp RGUI   &trans
-&trans  &trans             &trans       &trans     &trans          &trans             &trans    &trans  &trans        &trans            &trans    &trans             &trans     &trans
+&trans  &trans           &trans       &trans     &trans         &trans                            &trans      &trans            &trans    &trans             &trans     &trans
+&trans  &kp KP_DIVIDE    &kp RBKT     &kp BSLH   &kp SLASH      &kp LC(LG(LBKT))                  &kp LG(UP)  &kp LG(DOWN)      &kp UP    &kp LA(F4)         &kp LC(P)  &trans
+&trans  &kp KP_MULTIPLY  &kp INT_YEN  &kp MINUS  &kp EQUAL      &trans            &trans  &trans  &kp HOME    &kp LEFT          &kp DOWN  &kp RIGHT          &kp END    &trans
+&trans  &kp MINUS        &trans       &trans     &kp LC(LS(V))  &kp LS(LG(V))     &trans  &trans  &trans      &kp LC(LG(LEFT))  &trans    &kp LC(LG(RIGHT))  &kp RGUI   &trans
+&trans  &trans           &trans       &trans     &trans         &trans            &trans  &trans  &trans      &trans            &trans    &trans             &trans     &trans
             >;
         };
     };
