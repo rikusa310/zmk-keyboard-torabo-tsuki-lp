@@ -30,7 +30,7 @@
     zip_auto_mouse_layer: zip_auto_mouse_layer {
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
-        excluded-positions = <17 18 19 23 26 27 28 29 38 40 41 42 44 45 46 47 49 51 52 55 57 58 64>;
+        excluded-positions = <18 19 22 23 32 33 34 35 36 38 40 41 42 44 45 46 47 48 49 50 51 52 55 64>;
     };
 
     size_s_transform: keymap_transform_0 {
