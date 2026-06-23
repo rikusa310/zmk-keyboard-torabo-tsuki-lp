@@ -24,6 +24,15 @@
         map = <INPUT_REL_X INPUT_REL_HWHEEL>, <INPUT_REL_Y INPUT_REL_MISC>;
     };
 
+    // Auto Mouse Layer processor (Keyball39互換)
+    // トラックボール操作で自動的にレイヤー6に切り替え
+    // excluded-positions: マウスボタン・ナビキーではレイヤー解除しない
+    zip_auto_mouse_layer: zip_auto_mouse_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        excluded-positions = <17 18 19 23 29 38 40 41 42 44 45 46 47 49 51 52 55 64>;
+    };
+
     size_s_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <14>;

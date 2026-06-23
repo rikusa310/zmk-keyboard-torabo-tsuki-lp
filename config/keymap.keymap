@@ -115,5 +115,22 @@
 &trans  &trans           &trans       &trans     &trans         &trans            &trans  &trans  &trans      &trans            &trans    &trans             &trans     &trans
             >;
         };
+
+        // ============================================================
+        // Layer 6: Auto Mouse Layer (Keyball39互換)
+        //   トラックボール操作時に自動で切り替わるレイヤー
+        //   Left:  ↑ ↓ のみ、他は透過
+        //   Right: Home PgUp PgDn / Ctrl+Alt+Tab Win+V Ctrl+C / Shift Ctrl
+        // ============================================================
+
+        layer_6 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                          &trans           &trans     &trans  &trans     &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &kp UP                          &kp HOME         &kp PG_UP  &trans  &trans     &kp PG_DN  &trans
+&trans  &trans  &trans  &trans  &trans  &kp DOWN  &trans       &trans   &trans           &trans     &trans  &trans     &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans   &kp LC(LA(TAB))  &kp LG(V)  &trans  &kp LC(C)  &trans     &kp LSHIFT
+&trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans   &trans           &trans     &trans  &trans     &kp RCTRL  &trans
+            >;
+        };
     };
 };
