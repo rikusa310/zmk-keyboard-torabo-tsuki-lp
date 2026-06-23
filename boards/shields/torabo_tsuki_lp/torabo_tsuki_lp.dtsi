@@ -12,12 +12,14 @@
 
     zip_scroll_y_only_mapper: zip_scroll_y_only_mapper {
         compatible = "zmk,input-processor-code-mapper";
+        #input-processor-cells = <0>;
         type = <INPUT_EV_REL>;
         map = <INPUT_REL_Y INPUT_REL_WHEEL>, <INPUT_REL_X INPUT_REL_MISC>;
     };
 
     zip_scroll_x_only_mapper: zip_scroll_x_only_mapper {
         compatible = "zmk,input-processor-code-mapper";
+        #input-processor-cells = <0>;
         type = <INPUT_EV_REL>;
         map = <INPUT_REL_X INPUT_REL_HWHEEL>, <INPUT_REL_Y INPUT_REL_MISC>;
     };
