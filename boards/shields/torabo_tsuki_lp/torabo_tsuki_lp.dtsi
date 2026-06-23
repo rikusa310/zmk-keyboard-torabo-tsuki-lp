@@ -4,6 +4,12 @@
 #include "torabo_tsuki_lp_layouts.dtsi"
 
 / {
+    chosen {
+        zmk,physical-layout = &physical_layout_l;
+        zmk,kscan = &kscan0;
+        zmk,battery = &non_lipo_battery;
+    };
+
     zip_scroll_y_only_mapper: zip_scroll_y_only_mapper {
         compatible = "zmk,input-processor-code-mapper";
         type = <INPUT_EV_REL>;
@@ -14,12 +20,6 @@
         compatible = "zmk,input-processor-code-mapper";
         type = <INPUT_EV_REL>;
         map = <INPUT_REL_X INPUT_REL_HWHEEL>, <INPUT_REL_Y INPUT_REL_MISC>;
-    };
-};/ {
-    chosen {
-        zmk,physical-layout = &physical_layout_l;
-        zmk,kscan = &kscan0;
-        zmk,battery = &non_lipo_battery;
     };
 
     size_s_transform: keymap_transform_0 {
