@@ -127,9 +127,9 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans           &trans     &trans     &trans     &trans          &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &kp HOME         &kp PG_UP  &trans     &kp PG_DN  &trans          &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB3         &mkp MB1   &mo 3      &mkp MB2   &kp LEFT_SHIFT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB3         &mkp MB1   &mo 4      &mkp MB2   &kp LEFT_SHIFT  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(LA(TAB))  &kp LG(V)  &kp LC(C)  &mkp MB4   &kp RCTRL       &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans     &trans     &trans     &mo 4           &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans           &trans     &trans     &trans     &mo 3           &trans
             >;
         };
     };
