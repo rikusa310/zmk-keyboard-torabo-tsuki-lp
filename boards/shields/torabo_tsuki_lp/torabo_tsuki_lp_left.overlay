@@ -7,11 +7,11 @@
 
     scroll_layer_3 {
         layers = <3>;
-        input-processors = <&zip_scroll_y_only_mapper>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>, <&zip_scroll_x_only_mapper>;
     };
 
     scroll_layer_4 {
         layers = <4>;
-        input-processors = <&zip_scroll_x_only_mapper>;
+        input-processors = <&zip_scroll_y_only_mapper>;
     };
 };
