@@ -129,7 +129,7 @@
 &trans  &trans  &trans    &trans    &trans    &kp UP                                      &kp HOME         &kp PG_UP  &trans  &trans     &kp PG_DN  &trans
 &trans  &trans  &mkp MB2  &mkp MB3  &mkp MB1  &kp DOWN  &trans           &trans           &trans           &trans     &trans  &trans     &trans     &trans
 &trans  &trans  &mkp MB4  &mkp MB5  &trans    &trans    &trans           &trans           &kp LC(LA(TAB))  &kp LG(V)  &trans  &kp LC(C)  &trans     &kp LSHIFT
-&trans  &trans  &trans    &trans    &trans    &trans    &msc MOVE_Y(10)  &msc MOVE_X(10)  &trans           &trans     &trans  &trans     &kp RCTRL  &trans
+&trans  &trans  &trans    &trans    &trans    &trans    &mo 4    &mo 3    &trans           &trans     &trans  &trans     &kp RCTRL  &trans
             >;
         };
     };
