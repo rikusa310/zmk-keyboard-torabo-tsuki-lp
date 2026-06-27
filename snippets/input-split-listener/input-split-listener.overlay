@@ -23,7 +23,7 @@
 
         scroll_layer_4 {
             layers = <4>;
-            input-processors = <&zip_scroll_y_only_mapper>, <&zip_scroll_scaler 1 3>;
+            input-processors = <&zip_scroll_y_only_mapper>, <&zip_scroll_scaler 1 2>;
             process-next;
         };
      };
