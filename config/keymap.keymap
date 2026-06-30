@@ -79,7 +79,7 @@
         layer_1 {
             bindings = <
 &trans  &trans       &trans  &trans  &trans  &trans                   &trans          &trans      &trans      &trans      &trans      &trans
-&trans  &kp GRAVE    &kp F7  &kp F8  &kp F9  &kp F10                  &kp UNDERSCORE  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp SEMI    &trans
+&trans  &kp GRAVE    &kp F7  &kp F8  &kp F9  &kp F10                  &kp LS(INT_RO)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp SEMI    &trans
 &trans  &kp INT_YEN  &kp F4  &kp F5  &kp F6  &kp F11  &trans  &trans  &kp LS(EQUAL)   &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp LBKT    &trans
 &trans  &kp LSHIFT   &kp F1  &kp F2  &kp F3  &kp F12  &trans  &trans  &kp LS(SLASH)   &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp SQT     &trans
 &trans  &trans       &trans  &trans  &trans  &trans   &trans  &trans  &trans          &trans      &trans      &trans      &kp RSHIFT  &trans
