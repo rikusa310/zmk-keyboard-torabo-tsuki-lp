@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../qmk_firmware/keyboards/keyball/keyball39"
+		}
+	],
+	"settings": {}
+}
