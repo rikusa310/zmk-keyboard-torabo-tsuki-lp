@@ -8,8 +8,10 @@
 #define DT_DRV_COMPAT zmk_behavior_scroll_fixed
 
 #include <zephyr/device.h>
-#include <zephyr/logging/log.h>
 
+#if DT_HAS_COMPAT_STATUS_OKAY(DT_DRV_COMPAT)
+
+#include <zephyr/logging/log.h>
 #include <drivers/behavior.h>
 #include <zmk/behavior.h>
 #include <zmk/hid.h>
@@ -72,3 +74,6 @@ static const struct behavior_driver_api scroll_fixed_driver_api = {
                             CONFIG_KERNEL_INIT_PRIORITY_DEFAULT, &scroll_fixed_driver_api);
 
 DT_INST_FOREACH_STATUS_OKAY(SCROLL_FIXED_INST)
+
+#endif /* DT_HAS_COMPAT_STATUS_OKAY(DT_DRV_COMPAT) */
+
