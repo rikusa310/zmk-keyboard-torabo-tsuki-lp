@@ -159,11 +159,11 @@
 
         layer_5 {
             bindings = <
-&trans  &trans           &trans       &trans     &trans         &trans                                   &trans      &trans            &trans    &trans             &trans     &trans
-&trans  &kp KP_DIVIDE    &kp RBKT     &kp BSLH   &kp SLASH      &kp LC(LG(LBKT))                         &kp LG(UP)  &kp LG(DOWN)      &kp UP    &kp LA(F4)         &kp LC(P)  &trans
-&trans  &kp KP_MULTIPLY  &kp INT_YEN  &kp MINUS  &kp EQUAL      &trans            &trans  &trans         &kp HOME    &kp LEFT          &kp DOWN  &kp RIGHT          &kp END    &trans
-&trans  &kp MINUS        &trans       &trans     &kp LC(LS(V))  &kp LS(LG(V))     &trans  &trans         &trans      &kp LC(LG(LEFT))  &trans    &kp LC(LG(RIGHT))  &kp RGUI   &trans
-&trans  &trans           &trans       &trans     &trans         &trans            &trans  &kp BACKSPACE  &trans      &trans            &trans    &trans             &trans     &trans
+&trans  &trans           &trans        &trans        &trans         &trans                                       &trans      &trans            &trans    &trans             &trans     &trans
+&trans  &kp KP_DIVIDE    &kp RBKT      &kp BSLH      &kp SLASH      &kp LC(LG(LBKT))                             &kp LG(UP)  &kp LG(DOWN)      &kp UP    &kp LA(F4)         &kp LC(P)  &trans
+&trans  &kp KP_MULTIPLY  &kp INT_YEN   &kp MINUS     &kp EQUAL      &trans            &trans      &trans         &kp HOME    &kp LEFT          &kp DOWN  &kp RIGHT          &kp END    &trans
+&trans  &kp MINUS        &trans        &trans        &kp LC(LS(V))  &kp LS(LG(V))     &trans      &trans         &trans      &kp LC(LG(LEFT))  &trans    &kp LC(LG(RIGHT))  &kp RGUI   &trans
+&trans  &bt BT_SEL 0     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4      &bt BT_CLR  &kp BACKSPACE  &trans      &trans            &trans    &trans             &trans     &trans
             >;
         };
 
