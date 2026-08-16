@@ -12,8 +12,8 @@ ZMK v0.3 ファームウェアに、キーを1回押すと指定した固定量�
 
 | ファイル | 説明 |
 |---|---|
-| [`zmk,behavior-scroll-fixed.yaml`](file:///c:/Users/spica/Desktop/zmk-keyboard-torabo-tsuki-lp/dts/bindings/behaviors/zmk,behavior-scroll-fixed.yaml) | DTS バインディング定義。`scroll-y` / `scroll-x` プロパティを定義 |
-| [`behavior_scroll_fixed.c`](file:///c:/Users/spica/Desktop/zmk-keyboard-torabo-tsuki-lp/src/behavior_scroll_fixed.c) | カスタムビヘイビアのCドライバ本体 |
+| [`dts/bindings/behaviors/zmk,behavior-scroll-fixed.yaml`](file:///c:/Users/spica/Desktop/zmk-keyboard-torabo-tsuki-lp/dts/bindings/behaviors/zmk,behavior-scroll-fixed.yaml) | DTS バインディング定義。`scroll-y` / `scroll-x` プロパティを定義 |
+| [`src/behavior_scroll_fixed.c`](file:///c:/Users/spica/Desktop/zmk-keyboard-torabo-tsuki-lp/src/behavior_scroll_fixed.c) | カスタムビヘイビアのCドライバ本体 |
 | [`docs/fixed_amount_scroll_behavior/`](file:///c:/Users/spica/Desktop/zmk-keyboard-torabo-tsuki-lp/docs/fixed_amount_scroll_behavior/) | 本機能のドキュメント一式 |
 
 ### 変更
@@ -22,7 +22,18 @@ ZMK v0.3 ファームウェアに、キーを1回押すと指定した固定量�
 |---|---|
 | [`CMakeLists.txt`](file:///c:/Users/spica/Desktop/zmk-keyboard-torabo-tsuki-lp/CMakeLists.txt) | ビルド対象に `src/behavior_scroll_fixed.c` を追加 |
 | [`keymap.keymap`](file:///c:/Users/spica/Desktop/zmk-keyboard-torabo-tsuki-lp/config/keymap.keymap) | `scrl_up` (上10) / `scrl_dn` (下10) ビヘイビアインスタンスを定義 |
-| [`module.yml`](file:///c:/Users/spica/Desktop/zmk-keyboard-torabo-tsuki-lp/zephyr/module.yml) | `dts_root: .` を追加し、カスタムDTSバインディングの検出を有効化 |
+| [`zephyr/module.yml`](file:///c:/Users/spica/Desktop/zmk-keyboard-torabo-tsuki-lp/zephyr/module.yml) | `dts_root: .` を追加し、カスタムDTSバインディングの検出を有効化 |
+
+---
+
+## トラブルシューティング（GitHub Actions ビルドエラーの修正）
+
+### 原因
+スプリットキーボードのペリフェラル側ビルド（`torabo_tsuki_lp_left_peripheral` など）では、ポインティング機能（`CONFIG_ZMK_POINTING`）やキーマップ定義が存在しないため、`behavior_scroll_fixed.c` 内の HID 関数呼び出しがコンパイルエラーとなっていました。
+（セントラル側ビルドは正常に成功していました）
+
+### 対策
+`src/behavior_scroll_fixed.c` 全体を `#if DT_HAS_COMPAT_STATUS_OKAY(DT_DRV_COMPAT)` で囲み、デバイスツリー上に `zmk,behavior-scroll-fixed` のノードが存在するセントラル側でのみコンパイルされるようガードを追加しました。
 
 ---
 
@@ -72,24 +83,4 @@ sequenceDiagram
 // 例: Layer 6 のキーに割り当て
 &scrl_up    // 上スクロール
 &scrl_dn    // 下スクロール
-```
-
-### カスタマイズ
-
-スクロール量や方向を変更したい場合は、新しいインスタンスを追加できます：
-
-```dts
-// 横スクロール（右5単位）
-scrl_r: scroll_right {
-    compatible = "zmk,behavior-scroll-fixed";
-    #binding-cells = <0>;
-    scroll-x = <5>;
-};
-
-// 大きな縦スクロール（下50単位）
-scrl_pg: scroll_page {
-    compatible = "zmk,behavior-scroll-fixed";
-    #binding-cells = <0>;
-    scroll-y = <(-50)>;
-};
 ```
