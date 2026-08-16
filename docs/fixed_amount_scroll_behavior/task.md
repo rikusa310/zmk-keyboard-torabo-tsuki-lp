@@ -1,0 +1,5 @@
+- [x] DTS バインディング YAML 作成 (`dts/bindings/behaviors/zmk,behavior-scroll-fixed.yaml`)
+- [x] カスタムビヘイビア C ソース作成 (`src/behavior_scroll_fixed.c`)
+- [x] CMakeLists.txt 更新（新ソースファイル追加）
+- [x] keymap.keymap にビヘイビア定義追加
+- [x] zephyr/module.yml に dts_root 追加（DTS バインディング検出用）

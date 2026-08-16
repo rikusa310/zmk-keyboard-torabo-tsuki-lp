@@ -1,0 +1,22 @@
+description: |
+  Fixed-amount scroll behavior.
+  Sends a single HID scroll report with a configured fixed amount on key press.
+  Does not repeat on hold.
+
+compatible: "zmk,behavior-scroll-fixed"
+
+include: zero_param.yaml
+
+properties:
+  scroll-y:
+    type: int
+    default: 0
+    description: |
+      Vertical scroll amount per key press.
+      Positive = scroll up, Negative = scroll down.
+  scroll-x:
+    type: int
+    default: 0
+    description: |
+      Horizontal scroll amount per key press.
+      Positive = scroll right, Negative = scroll left.
