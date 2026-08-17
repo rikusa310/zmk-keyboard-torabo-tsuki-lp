@@ -14,7 +14,7 @@
 #include <zephyr/logging/log.h>
 #include <drivers/behavior.h>
 #include <zmk/behavior.h>
-#if IS_ENABLED(CONFIG_ZMK_POINTING) || IS_ENABLED(CONFIG_ZMK_MOUSE)
+#if (IS_ENABLED(CONFIG_ZMK_POINTING) || IS_ENABLED(CONFIG_ZMK_MOUSE)) && (!IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL))
 #include <zmk/hid.h>
 #include <zmk/endpoints.h>
 #endif
@@ -42,7 +42,7 @@ static int scroll_fixed_binding_pressed(struct zmk_behavior_binding *binding,
 
     LOG_DBG("scroll_fixed pressed: x=%d, y=%d", cfg->scroll_x, cfg->scroll_y);
 
-#if IS_ENABLED(CONFIG_ZMK_POINTING) || IS_ENABLED(CONFIG_ZMK_MOUSE)
+#if (IS_ENABLED(CONFIG_ZMK_POINTING) || IS_ENABLED(CONFIG_ZMK_MOUSE)) && (!IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL))
     // 1. Set scroll values in the HID mouse report
     zmk_hid_mouse_scroll_set(cfg->scroll_x, cfg->scroll_y);
 
@@ -54,7 +54,7 @@ static int scroll_fixed_binding_pressed(struct zmk_behavior_binding *binding,
     zmk_hid_mouse_scroll_set(0, 0);
     zmk_endpoints_send_mouse_report();
 #else
-    LOG_WRN("scroll_fixed: pointing not enabled on this build");
+    LOG_DBG("scroll_fixed: pointing not enabled or on peripheral (no HID available)");
 #endif
 
     return ZMK_BEHAVIOR_OPAQUE;
