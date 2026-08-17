@@ -28,6 +28,8 @@ struct behavior_scroll_fixed_config {
 
 static int scroll_fixed_binding_pressed(struct zmk_behavior_binding *binding,
                                          struct zmk_behavior_binding_event event) {
+    (void)event; // Suppress unused parameter warning
+
     const struct device *dev = device_get_binding(binding->behavior_dev);
 
     if (!dev) {
@@ -36,6 +38,7 @@ static int scroll_fixed_binding_pressed(struct zmk_behavior_binding *binding,
     }
 
     const struct behavior_scroll_fixed_config *cfg = dev->config;
+    (void)cfg; // Suppress unused variable warning if logging and pointing are disabled
 
     LOG_DBG("scroll_fixed pressed: x=%d, y=%d", cfg->scroll_x, cfg->scroll_y);
 
@@ -59,11 +62,16 @@ static int scroll_fixed_binding_pressed(struct zmk_behavior_binding *binding,
 
 static int scroll_fixed_binding_released(struct zmk_behavior_binding *binding,
                                           struct zmk_behavior_binding_event event) {
+    (void)binding;
+    (void)event;
     // One-shot behavior: nothing to do on release
     return ZMK_BEHAVIOR_OPAQUE;
 }
 
-static int behavior_scroll_fixed_init(const struct device *dev) { return 0; }
+static int behavior_scroll_fixed_init(const struct device *dev) { 
+    (void)dev;
+    return 0; 
+}
 
 static const struct behavior_driver_api scroll_fixed_driver_api = {
     .binding_pressed = scroll_fixed_binding_pressed,
